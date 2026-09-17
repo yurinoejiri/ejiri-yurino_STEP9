@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@yield('title', 'ECサイト')</title>
-        <link rel="styesheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <header>
@@ -14,7 +14,7 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">マイページ</a></li>
-                    <li>ログインユーザー: {{ $auth()->$user()->name ?? 'ゲスト' }}</li>
+                    <li>ログインユーザー: {{ auth()->user()->name??'ゲスト' }}</li>
             </nav>
 
             <button>ログアウト</button>
