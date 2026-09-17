@@ -4,30 +4,28 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@yield('title', 'ECサイト')</title>
-        <link rel="stylesheet" href="style.css">
+        @vite(['resources/sass/app.sass','resources/js/app.js','resources/css/style.css'])
     </head>
     <body>
-        <header>
+        <header class="header">
             <p>Cytech EC</p>
 
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">マイページ</a></li>
-                    <li>ログインユーザー: {{ auth()->user()->name??'ゲスト' }}</li>
+            <nav class=nav-manu>
+                <a href="#">Home</a>
+                <a href="#">マイページ</a>
+                <p>ログインユーザー: {{ auth()->user()->name??'ゲスト' }}</p>
+                <button class="logout-btn">ログアウト</button>
             </nav>
-
-            <button>ログアウト</button>
         </header>
-        <main>
+        <main class="main">
             <div>
                 @yield('content')
             </div>
         </main>
-        <footer>
-            <button>お問い合わせ</button>
+        <footer class="footer">
+            <button class="inquiry-btn">お問い合わせ</button>
 
-            <div>
+            <div class="footer-link">
                 <a href="">Home</a>
                 <a href="">マイページ</a>
             </div>

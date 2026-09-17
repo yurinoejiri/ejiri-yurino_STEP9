@@ -1,0 +1,60 @@
+@charset 'UTF-8';
+body {
+    font-size: 100%;
+    width: 100%;
+    margin: 0 auto;
+    color: rgb(50, 50, 69);
+}
+a {
+    color: rgb(70, 115, 229);
+}
+.header,.footer {
+    background-color:rgb(182, 222, 255);
+    color: white;
+}
+/*ヘッダー　　　ーーーーーーーーーーーーーーーーーーーーー*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+}
+.nav-manu {
+    display:flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.logout-btn {
+    background-color:rgb(254, 107, 107);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+/*メイン　ーーーーーーーーーーーーーーーーーーーーーーー */
+.main {
+    margin: 100px auto;
+}
+
+
+/*フッター　ーーーーーーーーーーーーーーーーーーーーーー */
+.footer {
+    text-align: center;
+    line-height: 2rem;
+    padding: 1rem 0;
+}
+.inquiry-btn {
+    border: none;
+    background-color: rgb(59, 160, 255);
+    font-size: 1rem;
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+.footer-link {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
