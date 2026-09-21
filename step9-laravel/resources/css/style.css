@@ -35,6 +35,36 @@ a {
 .main {
     margin: 100px auto;
 }
+.main-content {
+    margin: auto 20px;
+}
+
+/* 商品新規登録画面 */
+.create-form {
+    line-height: 1.8rem;
+}
+.form-width {
+    width: 100%;
+}
+.btns {
+    margin: 1rem auto;
+}
+.back-btn {
+    background-color: rgb(59, 160, 255);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+.create-btn {
+    background-color: rgb(152, 160, 168);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
 
 
 /*フッター　ーーーーーーーーーーーーーーーーーーーーーー */

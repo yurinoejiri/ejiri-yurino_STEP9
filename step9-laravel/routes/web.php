@@ -15,3 +15,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // 一覧表示　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 Route::get('/', [ProductsController::class, 'index'])->name('index');
+
+//商品登録ページ　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+Route::get('/create', [ProductsController::class, 'create'])->name('create');
+Route::post('/store', [ProductsController::class, 'store'])->name('store');
