@@ -11,7 +11,7 @@
             <p>Cytech EC</p>
 
             <nav class=nav-manu>
-                <a href="#">Home</a>
+                <a href="{{ route('index') }}">Home</a>
                 <a href="{{ route('mypage') }}">マイページ</a>
                 <p>ログインユーザー: {{ auth()->user()->name??'ゲスト' }}</p>
                 <button class="logout-btn">ログアウト</button>
@@ -26,8 +26,8 @@
             <button class="inquiry-btn">お問い合わせ</button>
 
             <div class="footer-link">
-                <a href="">Home</a>
-                <a href="">マイページ</a>
+                <a href="{{ route('index') }}">Home</a>
+                <a href="{{ route('mypage') }}">マイページ</a>
             </div>
 
             <p>&copy; 2024 Company,lnc</p>
