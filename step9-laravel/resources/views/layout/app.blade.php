@@ -12,7 +12,7 @@
 
             <nav class=nav-manu>
                 <a href="#">Home</a>
-                <a href="#">マイページ</a>
+                <a href="{{ route('mypage') }}">マイページ</a>
                 <p>ログインユーザー: {{ auth()->user()->name??'ゲスト' }}</p>
                 <button class="logout-btn">ログアウト</button>
             </nav>

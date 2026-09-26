@@ -8,7 +8,7 @@
     <h1>商品一覧</h1>
 
     <!-- 後で検索機能つける　-->
-    <table class="index-table">
+    <table class="table-design">
         <thead>
             <tr>
                 <th>商品番号</th>

@@ -39,6 +39,35 @@ a {
     margin: auto 20px;
 }
 
+/* マイページ */
+.account-btn {
+    background-color: rgb(59, 160, 255);
+    color: white;
+    font-size: 0.8rem;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+.account-content {
+    display: flex;
+    gap: 350px;
+}
+.account-text {
+    font-size: 0.8rem;
+}
+.right-position {
+    display: block;
+    width: fit-content;
+    margin-top: -3.5rem;
+    margin-left: auto;
+}
+.mypage-content {
+    margin-bottom: 4rem;
+}
+.table-design {
+    margin-top: 1.5rem;
+}
+
 /* 商品新規登録画面 */
 .create-form {
     line-height: 1.8rem;
@@ -60,7 +89,7 @@ a {
 .create-btn {
     background-color: rgb(152, 160, 168);
     color: white;
-    font-size: 1rem;
+    font-size: 0.8rem;
     border: none;
     padding: 0.5rem;
     border-radius: 0.5rem;

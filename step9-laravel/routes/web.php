@@ -19,3 +19,6 @@ Route::get('/', [ProductsController::class, 'index'])->name('index');
 //商品登録ページ　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 Route::get('/create', [ProductsController::class, 'create'])->name('create');
 Route::post('/store', [ProductsController::class, 'store'])->name('store');
+
+//マイページ
+Route::get('/mypage', [ProductsController::class, 'mypage'])->name('mypage');
