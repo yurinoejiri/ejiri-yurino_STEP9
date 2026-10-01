@@ -24,7 +24,7 @@
         <div class="group">
             <h2>＜出品商品＞</h2>
 
-            <a href="" class="create-btn right-position">新規登録</a>
+            <a href="{{ route('create') }}" class="create-btn right-position">新規登録</a>
         </div>
         <table class="table-design">
             <thead>
@@ -38,13 +38,12 @@
             <tbody>
                 <tr>
                     <td>{{ $product->id }}</td>
-                    <td>{{ $product->products_name }}</td>
+                    <td>{{ $product->product_name }}</td>
                     <td>{{ $product->description }}</td>
                     <td>{{ $product->price }}</td>
+                    <td><a href="" class="show-btn">詳細</a></td>
                 </tr>
             </tbody>
-
-            <a href="" class="show-btn">詳細</a>
             @endforeach
         </table>
     </div>

@@ -20,7 +20,7 @@
 
     <form class="create-form" action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <label for="">商品名</label><br>
+        <label for="product-name">商品名</label><br>
         <input type="text" class="form-width" name="product_name" id="product_name" value="{{ old('product_name') }}"><br>
 
         <label for="price">価格</label><br>

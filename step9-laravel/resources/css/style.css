@@ -42,8 +42,7 @@ a {
 .main-content {
     margin: auto 20px;
 }
-
-/* マイページ */
+/* mainボタン */
 .account-btn {
     background-color: rgb(59, 160, 255);
     color: white;
@@ -51,36 +50,6 @@ a {
     border: none;
     padding: 0.5rem;
     border-radius: 0.5rem;
-}
-.account-content {
-    display: flex;
-    gap: 350px;
-}
-.account-text {
-    font-size: 0.8rem;
-}
-.right-position {
-    display: block;
-    width: fit-content;
-    margin-top: -3.5rem;
-    margin-left: auto;
-}
-.mypage-content {
-    margin-bottom: 4rem;
-}
-.table-design {
-    margin-top: 1.5rem;
-}
-
-/* 商品新規登録画面 */
-.create-form {
-    line-height: 1.8rem;
-}
-.form-width {
-    width: 100%;
-}
-.btns {
-    margin: 1rem auto;
 }
 .back-btn {
     background-color: rgb(59, 160, 255);
@@ -98,8 +67,55 @@ a {
     padding: 0.5rem;
     border-radius: 0.5rem;
 }
-
-
+.show-btn {
+    background-color: rgb(98, 175, 112);
+    color: white;
+    font-size: 0.8rem;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+/* マイページ */
+.account-content {
+    display: flex;
+    gap: 350px;
+}
+.account-text {
+    font-size: 0.8rem;
+}
+.right-position {
+    display: block;
+    width: fit-content;
+    margin-top: -3.5rem;
+    margin-left: auto;
+}
+.mypage-content {
+    margin-bottom: 4rem;
+}
+.table-design {
+    width: 100%;
+    margin-top: 1.5rem;
+    text-align: left;
+    border-collapse: collapse;
+}
+.table-design tr ,
+.table-design thead{
+    border-bottom: 1px solid rgb(50, 50, 69);
+    line-height: 2.5rem;
+}
+th,td {
+    padding-right: 4rem;
+}
+/* 商品新規登録画面 */
+.create-form {
+    line-height: 1.8rem;
+}
+.form-width {
+    width: 100%;
+}
+.btns {
+    margin: 1rem auto;
+}
 /*フッター　ーーーーーーーーーーーーーーーーーーーーーー */
 .footer {
     text-align: center;

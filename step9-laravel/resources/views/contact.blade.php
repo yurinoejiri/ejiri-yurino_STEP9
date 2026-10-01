@@ -6,7 +6,8 @@
 <div class="main-content">
     <h1>お問い合わせフォーム</h1>
 
-    <form action="" method="POST">
+    <form action="{{ route('content.submit') }}" method="POST">
+        @csrf
         <label for="name">名前</label><br>
         <input type="text" name="name" id="name"><br>
 

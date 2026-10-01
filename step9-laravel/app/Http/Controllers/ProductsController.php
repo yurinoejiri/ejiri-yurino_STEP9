@@ -42,11 +42,15 @@ class ProductsController extends Controller
         //後でユーザーログインして開くように修正する。
         $validatedData['user_id'] = auth()->id();
 
-        Products::create($validatedData);
+        $product = Products::create($validatedData);
 
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('image', 'public');
+        //画像処理
+        if ($request->hasFile('img_path')) {
+            $imagePath = $request->file('img_path')->store('products', 'public');
+            $product->img_path = $imagePath;
         }
+
+        $product->save();
 
         return redirect()->route('index')->with('商品が登録されました');
     }
