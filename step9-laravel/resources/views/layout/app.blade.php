@@ -14,7 +14,14 @@
                 <a href="{{ route('index') }}">Home</a>
                 <a href="{{ route('mypage') }}">マイページ</a>
                 <p>ログインユーザー: {{ auth()->user()->name??'ゲスト' }}</p>
-                <button class="logout-btn">ログアウト</button>
+
+                <form class="logout-form" id="logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                </form>
+                <a class="logout-btn" href="{{ route('logout') }}" 
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    ログアウト
+                </a>
             </nav>
         </header>
         <main class="main">
@@ -23,7 +30,7 @@
             </div>
         </main>
         <footer class="footer">
-            <button class="inquiry-btn">お問い合わせ</button>
+            <a href="{{ route('contact') }}" class="inquiry-btn">お問い合わせ</a>
 
             <div class="footer-link">
                 <a href="{{ route('index') }}">Home</a>

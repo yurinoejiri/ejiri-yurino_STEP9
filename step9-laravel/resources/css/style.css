@@ -7,6 +7,7 @@ body {
 }
 a {
     color: rgb(70, 115, 229);
+    text-decoration: none;
 }
 .header,.footer {
     background-color:rgb(182, 222, 255);
@@ -29,6 +30,9 @@ a {
     border: none;
     padding: 0.5rem;
     border-radius: 0.5rem;
+}
+.logout-form {
+    display: none;
 }
 
 /*メイン　ーーーーーーーーーーーーーーーーーーーーーーー */
@@ -100,7 +104,7 @@ a {
 .footer {
     text-align: center;
     line-height: 2rem;
-    padding: 1rem 0;
+    padding: 2rem 0;
 }
 .inquiry-btn {
     border: none;
@@ -115,5 +119,5 @@ a {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem auto;
 }
