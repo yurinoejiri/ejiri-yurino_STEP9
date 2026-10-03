@@ -19,6 +19,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // 一覧表示　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 Route::get('/', [ProductsController::class, 'index'])->name('index');
 
+// 詳細表示　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+Route::get('/detail/{id}', [ProductsController::class, 'show'])->name('detail');
+
+// 削除　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+Route::delete('/detail/{id}', [ProductsController::class, 'destroy'])->name('destroy');
+Auth::routes();
+
 //商品登録ページ　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 Route::get('/create', [ProductsController::class, 'create'])->name('create');
 Route::post('/store', [ProductsController::class, 'store'])->name('store');

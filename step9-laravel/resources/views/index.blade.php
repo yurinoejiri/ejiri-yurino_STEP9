@@ -34,7 +34,7 @@
                 </td>
                 <td>{{ $product->price }}</td>
 
-                <td><a href="" class="show-btn">詳細</a></td> <!-- あとでrouteいれる -->
+                <td><a href="{{ route('detail', $product->id) }}" class="show-btn">詳細</a></td>
             </tr>
         </tbody>
         @endforeach

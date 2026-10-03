@@ -75,6 +75,13 @@ a {
     padding: 0.5rem;
     border-radius: 0.5rem;
 }
+.delete-btn {
+    background-color:rgb(254, 107, 107);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
 /* マイページ */
 .account-content {
     display: flex;

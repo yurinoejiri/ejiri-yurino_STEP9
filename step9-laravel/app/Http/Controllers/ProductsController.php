@@ -30,6 +30,21 @@ class ProductsController extends Controller
         return view('mypage', compact('users', 'products'));
     }
 
+    public function show($id)
+    {
+        $product = Products::findOrFail($id);
+
+        return view('detail', compact('product'));
+    }
+
+    public function destroy($id)
+    {
+        $product = Products::findOrFail($id);
+        $product->delete();
+
+        return redirect()->route('index')->with('souccess', '商品が削除されました。');
+    }
+
     public function create()
     {
         return view('create');
