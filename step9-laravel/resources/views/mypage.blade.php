@@ -7,7 +7,7 @@
     <h1>マイページ</h1>
 
 
-    <a href=# class="account-btn">アカウント編集</a>
+    <a href="{{ route('account_edit', $users->id) }}" class="account-btn">アカウント編集</a>
 
     <div class="account-content">
         <div class="account-text">

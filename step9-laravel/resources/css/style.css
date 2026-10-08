@@ -130,7 +130,8 @@ th,td {
 
 /* 商品新規登録画面 */
 .create-form,
-.edit-form {
+.edit-form,
+.account-form {
     line-height: 1.8rem;
 }
 .form-width {
