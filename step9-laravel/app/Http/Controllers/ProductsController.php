@@ -10,6 +10,7 @@ use App\Models\Users;
 
 class ProductsController extends Controller
 {
+    // 一覧表示　ーーーーーーーーーーーーーーーーーーーーーーーーーー
     public function index()
     {
         $products = Products::all();
@@ -17,6 +18,8 @@ class ProductsController extends Controller
         return view('index', compact('products'));
     }
 
+
+    // マイページ　ーーーーーーーーーーーーーーーーーーーーーーーーー
     public function mypage()
     {
         $user_id = Auth::id();
@@ -30,6 +33,7 @@ class ProductsController extends Controller
         return view('mypage', compact('users', 'products'));
     }
 
+    // 詳細画面 　ーーーーーーーーーーーーーーーーーーーーーーーーー
     public function show($id)
     {
         $product = Products::findOrFail($id);
@@ -37,6 +41,45 @@ class ProductsController extends Controller
         return view('detail', compact('product'));
     }
 
+    // 更新　ーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    public function edit($id)
+    {
+        $product = Products::findOrFail($id);
+        
+        return view('edit', compact('product'));
+    }
+
+    public function update(ProductsRequest $request, $id)
+    {
+        $validatedData = $request->validated();
+
+        $product = Products::findOrFail($id);
+
+        $product->product_name = $validatedData['product_name'];
+        $product->description = $validatedData['description'];
+        $product->price = $validatedData['price'];
+        $product->stock = $validatedData['stock'];
+
+
+        //画像がアップロードされた場合の処理
+        if ($request->hasFile('img_path')) {
+            
+            // 既存の画像を削除
+            if($product->img_path) {
+                Storage::disk('public')->delete($product->img_path);
+            }
+
+            // 画像を保存
+            $image_Path = $request->file('img_path')->store('img_path', 'public');
+            $product->img_path = $image_Path;
+        }
+
+        $product->save();
+
+        return redirect()->route('detail', $id)->with('success', '商品情報が更新されました。');
+    }
+
+    // 削除　ーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     public function destroy($id)
     {
         $product = Products::findOrFail($id);
@@ -45,6 +88,7 @@ class ProductsController extends Controller
         return redirect()->route('index')->with('souccess', '商品が削除されました。');
     }
 
+    // 新規登録　ーーーーーーーーーーーーーーーーーーーーーーーーーー
     public function create()
     {
         return view('create');
@@ -61,8 +105,8 @@ class ProductsController extends Controller
 
         //画像処理
         if ($request->hasFile('img_path')) {
-            $imagePath = $request->file('img_path')->store('products', 'public');
-            $product->img_path = $imagePath;
+            $image_Path = $request->file('img_path')->store('products', 'public');
+            $product->img_path = $image_Path;
         }
 
         $product->save();

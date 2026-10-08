@@ -13,6 +13,10 @@ a {
     background-color:rgb(182, 222, 255);
     color: white;
 }
+.error-message {
+    color: red;
+    font-size: 1rem;
+}
 /*ヘッダー　　　ーーーーーーーーーーーーーーーーーーーーー*/
 .header {
     display: flex;
@@ -59,12 +63,13 @@ a {
     padding: 0.5rem;
     border-radius: 0.5rem;
 }
-.create-btn {
+.create-btn,
+.update-btn {
     background-color: rgb(152, 160, 168);
     color: white;
-    font-size: 0.8rem;
+    font-size: 1rem;
     border: none;
-    padding: 0.5rem;
+    padding: 0.3rem 0.5rem;
     border-radius: 0.5rem;
 }
 .show-btn {
@@ -78,8 +83,17 @@ a {
 .delete-btn {
     background-color:rgb(254, 107, 107);
     color: white;
+    font-size: 1rem;
     border: none;
-    padding: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+}
+.edit-btn {
+    background-color:rgb(82, 205, 160);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    padding: 0.55rem 0.5rem;
     border-radius: 0.5rem;
 }
 /* マイページ */
@@ -113,8 +127,10 @@ a {
 th,td {
     padding-right: 4rem;
 }
+
 /* 商品新規登録画面 */
-.create-form {
+.create-form,
+.edit-form {
     line-height: 1.8rem;
 }
 .form-width {

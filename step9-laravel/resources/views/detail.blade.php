@@ -15,7 +15,7 @@
     </div>
 
     <div class="btns">
-        <a href="">編集</a>
+        <a href="{{ route('edit', $product->id) }}" class="edit-btn">編集</a>
 
         <form action="{{ route('destroy', $product->id) }}" method="POST" style="display: inline-block;">
             @csrf

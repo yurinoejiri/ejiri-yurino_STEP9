@@ -22,6 +22,11 @@ Route::get('/', [ProductsController::class, 'index'])->name('index');
 // 詳細表示　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 Route::get('/detail/{id}', [ProductsController::class, 'show'])->name('detail');
 
+// 更新・編集画面　ーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+Route::get('/product/{id}/edit', [ProductsController::class, 'edit'])->name('edit');
+
+Route::put('/product/{id}', [ProductsController::class, 'update'])->name('update');
+
 // 削除　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 Route::delete('/detail/{id}', [ProductsController::class, 'destroy'])->name('destroy');
 Auth::routes();
