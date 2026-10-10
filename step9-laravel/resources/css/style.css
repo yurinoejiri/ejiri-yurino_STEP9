@@ -64,7 +64,8 @@ a {
     border-radius: 0.5rem;
 }
 .create-btn,
-.update-btn {
+.update-btn,
+.search-btn {
     background-color: rgb(152, 160, 168);
     color: white;
     font-size: 1rem;

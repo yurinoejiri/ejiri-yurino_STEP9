@@ -19,6 +19,26 @@ class ProductsController extends Controller
         return view('index', compact('products'));
     }
 
+    // 検索機能　ーーーーーーーーーーーーーーーーーーーーーーーーーー
+    public function search(Request $request)
+    {
+        $query = Products::query();
+
+        if ($request->filled('product_name')) {
+            $query->where('product_name', 'like', '%' . $request->product_name . '%');
+        }
+        if ($request->filled('min_price')) {
+            $query->where('price', '>=', $request->min_price);
+        }
+        if ($request->filled('max_price')) {
+            $query->where('price', '<=', $request->max_price);
+        }
+
+        $products = $query->get();
+
+        return view('index', compact('products'));
+    }
+
 
     // マイページ　ーーーーーーーーーーーーーーーーーーーーーーーーー
     public function mypage()

@@ -20,6 +20,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // 一覧表示　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 Route::get('/', [ProductsController::class, 'index'])->name('index');
 
+//検索機能　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+Route::get('/search', [ProductsController::class, 'search'])->name('search');
+
 // 詳細表示　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 Route::get('/detail/{id}', [ProductsController::class, 'show'])->name('detail');
 
