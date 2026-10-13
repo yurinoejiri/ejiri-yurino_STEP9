@@ -17,6 +17,20 @@ a {
     color: red;
     font-size: 0.8rem;
 }
+.account-nav {
+    display: flex;
+    gap: 1rem;
+}
+.account-nav-content {
+    color: rgb(50, 50, 69);
+}
+th,td {
+    vertical-align: middle;
+}
+
+img {
+    display: block;
+}
 /*ヘッダー　　　ーーーーーーーーーーーーーーーーーーーーー*/
 .header {
     display: flex;
@@ -38,7 +52,6 @@ a {
 .logout-form {
     display: none;
 }
-
 /*メイン　ーーーーーーーーーーーーーーーーーーーーーーー */
 .main {
     margin: 100px auto;

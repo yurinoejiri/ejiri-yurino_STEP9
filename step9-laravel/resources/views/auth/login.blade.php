@@ -55,7 +55,7 @@
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
-                                </button>
+                                </button><br>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
@@ -64,6 +64,8 @@
                                 @endif
                             </div>
                         </div>
+
+                        
                     </form>
                 </div>
             </div>

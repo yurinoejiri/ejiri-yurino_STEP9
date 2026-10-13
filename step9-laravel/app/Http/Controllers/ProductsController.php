@@ -14,7 +14,9 @@ class ProductsController extends Controller
     // 一覧表示　ーーーーーーーーーーーーーーーーーーーーーーーーーー
     public function index()
     {
-        $products = Products::all();
+        $user_id = Auth::id();
+
+        $products = Products::getOtherProducts($user_id);
 
         return view('index', compact('products'));
     }
