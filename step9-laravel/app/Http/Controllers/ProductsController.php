@@ -56,7 +56,15 @@ class ProductsController extends Controller
         return view('mypage', compact('users', 'products'));
     }
 
-    // 詳細画面 　ーーーーーーーーーーーーーーーーーーーーーーーーー
+    // 商品詳細　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    public function salesDetail($id)
+    {
+        $product = Products::findOrFail($id);
+
+        return view('sales_detail', compact('product'));
+    }
+
+    // 出品商品詳細画面 　ーーーーーーーーーーーーーーーーーーーーーーーーー
     public function show($id)
     {
         $product = Products::findOrFail($id);

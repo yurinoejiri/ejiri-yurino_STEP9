@@ -43,7 +43,7 @@
                 </td>
                 <td>{{ $product->price }}</td>
 
-                <td><a href="{{ route('detail', $product->id) }}" class="show-btn">詳細</a></td>
+                <td><a href="{{ route('salesDetail', $product->id) }}" class="show-btn">詳細</a></td>
             </tr>
         </tbody>
         @endforeach

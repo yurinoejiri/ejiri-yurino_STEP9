@@ -20,10 +20,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // 一覧表示　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 Route::get('/', [ProductsController::class, 'index'])->name('index');
 
-//検索機能　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+//　　検索機能　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 Route::get('/search', [ProductsController::class, 'search'])->name('search');
 
-// 詳細表示　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+//　　商品詳細表示 ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+Route::get('/sales_detail/{id}', [ProductsController::class, 'salesDetail'])->name('salesDetail');
+
+// 出品商品詳細表示　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 Route::get('/detail/{id}', [ProductsController::class, 'show'])->name('detail');
 
 // 更新・編集画面　ーーーーーーーーーーーーーーーーーーーーーーーーーーーー

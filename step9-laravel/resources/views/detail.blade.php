@@ -1,17 +1,17 @@
 @extends('layout.app')
 
-@section('title', '商品詳細')
+@section('title', '出品商品詳細画面')
 
 @section('content')
 <div class="main-content">
     <h1>商品詳細</h1>
 
     <div class="detail-content">
-        <p>商品名:{{ $product->product_name }}</p>
-        <p>説明:{{ $product->description }}</p>
-        <img src="{{ asset('storage/' . $product->img_path) }}" alt="{{ $product->product_name }}">
-        <p>金額：¥{{ $product->price }}</p>
-        <p>会社名:{{ $product->company_name }}</p>
+        <p>商品名: {{ $product->product_name }}</p>
+        <p>説明: {{ $product->description }}</p>
+        <p>画像: <img src="{{ asset('storage/' . $product->img_path) }}" alt="{{ $product->product_name }}"><p>
+        <p>金額： ¥{{ $product->price }}</p>
+        <p>会社名: {{ $product->company_name }}</p>
     </div>
 
     <div class="btns">
