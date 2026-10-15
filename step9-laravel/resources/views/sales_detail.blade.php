@@ -15,8 +15,8 @@
         <!-- お気に入りのハートマーク入れる -->
 
         <div class="btns">
-            <a href="" class="sail_btn">購入する</a>
-            <a href="{{route('index')}}" class="back-btn">戻る</a>
+            <a href="{{ route('sales', $product->id) }}" class="sales_btn">購入する</a>
+            <a href="{{ route('index') }}" class="back-btn">戻る</a>
         </div>
     </div>
 </div>

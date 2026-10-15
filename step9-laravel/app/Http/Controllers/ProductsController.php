@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProductsRequest;
 use App\Http\Requests\UsersRequest;
+use App\Http\Requests\SalesRequest;
 use App\Models\Products;
 use App\Models\Users;
+use App\Models\Sales;
 
 class ProductsController extends Controller
 {
@@ -51,9 +54,13 @@ class ProductsController extends Controller
 
         $products = Products::getOwnProducts($user_id);
 
-        // 購入した商品の一覧を出すコードを後で書く
+        $sales = Sales::with('product')
+            ->where('user_id', Auth::id())
+            ->latest()
+            ->get();
+            
 
-        return view('mypage', compact('users', 'products'));
+        return view('mypage', compact('users', 'products', 'sales'));
     }
 
     // 商品詳細　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -62,6 +69,46 @@ class ProductsController extends Controller
         $product = Products::findOrFail($id);
 
         return view('sales_detail', compact('product'));
+    }
+
+    // 購入　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    public function sales($id)
+    {
+        $product = Products::findOrFail($id);
+
+        return view('sales', compact('product'));
+    }
+
+    public function purchase(SalesRequest $request, $id)
+    {
+        $validatedData = $request->validated();
+
+        $quantity = (int) $request->quantity;
+
+        try {
+            DB::transaction(function () use ($id, $quantity) {
+
+                $product = Products::lockForUpdate()->findOrFail($id);
+
+                if ($product->stock < $quantity) {
+                    throw new \Exception('在庫が足りません。');
+                }
+
+                $product->stock -= $quantity;
+                $product->save();
+
+                Sales::create([
+                    'user_id' => Auth::id(),
+                    'product_id' => $product->id,
+                    'quantity' => $quantity,
+                    'total_price' => $product->price * $quantity,
+                ]);
+            });
+        } catch (\Exeption $e) {
+            return back()->withErrors(['quantity' => $e->getMessage()]);
+        }
+
+        return redirect()->route('index')->with('success', '購入が完了しました。');
     }
 
     // 出品商品詳細画面 　ーーーーーーーーーーーーーーーーーーーーーーーーー

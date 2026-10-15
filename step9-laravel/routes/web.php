@@ -26,6 +26,11 @@ Route::get('/search', [ProductsController::class, 'search'])->name('search');
 //　　商品詳細表示 ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 Route::get('/sales_detail/{id}', [ProductsController::class, 'salesDetail'])->name('salesDetail');
 
+// 商品購入ページ　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+Route::get('/product/{id}/sales', [ProductsController::class, 'sales'])->name('sales');
+
+Route::post('/product/{id}/purchase', [ProductsController::class, 'purchase'])->name('purchase');
+
 // 出品商品詳細表示　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 Route::get('/detail/{id}', [ProductsController::class, 'show'])->name('detail');
 

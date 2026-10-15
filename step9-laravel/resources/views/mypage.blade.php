@@ -59,16 +59,20 @@
                 <th>個数</th>
             </thead>
 
-            @foreach($products as $product)
             <tbody>
+            @forelse($sales as $sale)
                 <tr>
-                    <td>{{ $product->product_name }}</td>
-                    <td>{{ $product->description }}</td>
-                    <td>{{ $product->price }}</td>
-                    <td>後で個数を入れる</td>
+                    <td>{{ $sale->product->product_name }}</td>
+                    <td>{{ $sale->product->description }}</td>
+                    <td>{{ $sale->product->price }}</td>
+                    <td>{{ $sale->quantity }}</td>
                 </tr>
+            @empty
+                <tr>
+                    <td>購入した商品はありません。</td>
+                </tr>
+            @endforelse
             </tbody>
-            @endforeach
         </table>
     </div>
 </div>
