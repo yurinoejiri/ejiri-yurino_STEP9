@@ -3,7 +3,7 @@
 @section('title', '編集画面')
 
 @section('content')
-<div class="main-content">
+<div class="main__content">
     <h1>出品商品編集</h1>
 
     @if($errors->any())
@@ -16,7 +16,7 @@
     </div>
     @endif
 
-    <form class="edit-form" action="{{ route('update', $product->id) }}" method="POST" entype="multipart/form-data">
+    <form class="form" action="{{ route('update', $product->id) }}" method="POST" entype="multipart/form-data">
         @csrf
         @method('PUT')
         <label for="product_name">商品名</label><br>
@@ -30,9 +30,9 @@
         <label for="img_path" name="img_path" id="img_path">商品画像</label><br>
         <input type="file" name="img_path" id="img_path"><br>
 
-        <div class="btns">
-            <a href="{{ route('detail', $product->id) }}" class="back-btn">戻る</a>
-            <button type="submit" class="update-btn">更新</button>
+        <div class="btn-qroup">
+            <a href="{{ route('detail', $product->id) }}" class="btn btn--primary">戻る</a>
+            <button type="submit" class="btn btn--secondary">更新</button>
         </div>
     </form>
 </div>

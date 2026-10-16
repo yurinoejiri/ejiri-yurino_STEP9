@@ -10,16 +10,16 @@
         <header class="header">
             <p>Cytech EC</p>
 
-            <nav class=nav-manu>
+            <nav class=header__nav>
                 <a href="{{ route('index') }}">Home</a>
                 <a href="{{ route('mypage') }}">マイページ</a>
                 <p>ログインユーザー: {{ auth()->user()->name??'ゲスト' }}</p>
 
-                <form class="logout-form" id="logout-form" action="{{ route('logout') }}" method="POST">
+                <form class="header__logout-form" id="header__logout-form" action="{{ route('logout') }}" method="POST">
                     @csrf
                 </form>
-                <a class="logout-btn" href="{{ route('logout') }}" 
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <a class="header__logout-btn" href="{{ route('logout') }}" 
+                onclick="event.preventDefault(); document.getElementById('header__logout-form').submit();">
                     ログアウト
                 </a>
             </nav>
@@ -30,9 +30,9 @@
             </div>
         </main>
         <footer class="footer">
-            <a href="{{ route('contact') }}" class="inquiry-btn">お問い合わせ</a>
+            <a href="{{ route('contact') }}" class="footer__inquiry-btn">お問い合わせ</a>
 
-            <div class="footer-link">
+            <div class="footer__links">
                 <a href="{{ route('index') }}">Home</a>
                 <a href="{{ route('mypage') }}">マイページ</a>
             </div>

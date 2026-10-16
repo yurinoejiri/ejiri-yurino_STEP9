@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="main-content">
+<div class="main__content">
     <h1>商品一覧</h1>
 
     <form action="{{ route('search') }}" method="GET">
@@ -13,11 +13,11 @@
             <input type="number" name="min_price" placeholder="最低価格" value="{{ request('min_price') }}">
             <span>〜</span>
             <input type="number" name="max_price" placeholder="最高価格" value="{{ request('max_price') }}">
-            <button type="submit" class="search-btn">検索</button>
+            <button type="submit" class="btn btn--secondary">検索</button>
         </div>
     </form><br>
         
-    <table class="table-design">
+    <table class="table">
         <thead>
             <tr>
                 <th>商品番号</th>
@@ -43,7 +43,7 @@
                 </td>
                 <td>{{ $product->price }}</td>
 
-                <td><a href="{{ route('salesDetail', $product->id) }}" class="show-btn">詳細</a></td>
+                <td><a href="{{ route('salesDetail', $product->id) }}" class="btn btn--success btn--small">詳細</a></td>
             </tr>
         </tbody>
         @endforeach

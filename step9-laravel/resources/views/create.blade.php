@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="main-content">
+<div class="main__content">
     <h1>商品登録</h1>
 
     <!-- エラーメッセージ -->
@@ -18,7 +18,7 @@
     </div>
     @endif
 
-    <form class="create-form" action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
+    <form class="form" action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="product-name">商品名</label><br>
         <input type="text" class="form-width" name="product_name" id="product_name" value="{{ old('product_name') }}"><br>
@@ -35,9 +35,9 @@
         <label for="img-path">商品画像</label><br>
         <input type="file" class="form-width" name="img_path" id="img_path"><br>
 
-        <div class="btns">
-            <a href="{{ route('index') }}" class="back-btn">戻る</a>
-            <button type="submit" class="create-btn">登録</button>
+        <div class="btn-qroup">
+            <a href="{{ route('index') }}" class="btn btn--primary">戻る</a>
+            <button type="submit" class="btn btn--secondary">登録</button>
         </div>
     </form>
 </div>

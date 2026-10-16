@@ -25,8 +25,8 @@
                 </a>
 
                 <div class="account-nav">
-                    <a href="{{ route('login') }}" class="account-nav-content">Login</a>
-                    <a href="{{ route('register') }}" class="account-nav-content">Register</a>
+                    <a href="{{ route('login') }}" class="account-nav__content">Login</a>
+                    <a href="{{ route('register') }}" class="account-nav__content">Register</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">

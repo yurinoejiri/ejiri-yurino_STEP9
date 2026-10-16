@@ -17,11 +17,11 @@ a {
     color: red;
     font-size: 0.8rem;
 }
-.account-nav {
+.account__text {
     display: flex;
     gap: 1rem;
 }
-.account-nav-content {
+.account-nav__content {
     color: rgb(50, 50, 69);
 }
 th,td {
@@ -37,113 +37,89 @@ img {
     justify-content: space-between;
     padding: 1rem 1rem;
 }
-.nav-manu {
+.header__nav {
     display:flex;
     align-items: center;
     gap: 1.5rem;
 }
-.logout-btn {
+.header__logout-btn {
     background-color:rgb(254, 107, 107);
     color: white;
     border: none;
     padding: 0.5rem;
     border-radius: 0.5rem;
 }
-.logout-form {
+.header__logout-form {
     display: none;
 }
 /*メイン　ーーーーーーーーーーーーーーーーーーーーーーー */
 .main {
     margin: 100px auto;
 }
-.main-content {
+.main__content {
     margin: auto 20px;
 }
 /* mainボタン */
-.account-btn {
-    background-color: rgb(59, 160, 255);
-    color: white;
-    font-size: 0.8rem;
-    border: none;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-}
-.back-btn {
-    background-color: rgb(59, 160, 255);
+.btn {
     color: white;
     font-size: 1rem;
     border: none;
-    padding: 0.5rem;
     border-radius: 0.5rem;
 }
-.create-btn,
-.update-btn,
-.search-btn {
+.btn--small {
+    font-size: 0.8rem;
+}
+.btn--primary {
+    background-color: rgb(59, 160, 255);
+    padding: 0.5rem;
+}
+.btn--secondary {
     background-color: rgb(152, 160, 168);
-    color: white;
-    font-size: 1rem;
-    border: none;
     padding: 0.3rem 0.5rem;
-    border-radius: 0.5rem;
 }
-.show-btn {
+.btn--success  {
     background-color: rgb(98, 175, 112);
-    color: white;
-    font-size: 0.8rem;
-    border: none;
     padding: 0.5rem;
-    border-radius: 0.5rem;
 }
-.delete-btn {
+.btn--danger {
     background-color:rgb(254, 107, 107);
-    color: white;
-    font-size: 1rem;
-    border: none;
     padding: 0.3rem 0.5rem;
-    border-radius: 0.5rem;
 }
-.edit-btn {
+.btn--edit {
     background-color:rgb(82, 205, 160);
-    color: white;
-    font-size: 1rem;
-    border: none;
     padding: 0.55rem 0.5rem;
-    border-radius: 0.5rem;
-}
-.sales_btn {
-    background-color: rgb(98, 175, 112);
-    color: white;
-    font-size: 1rem;
-    border: none;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
 }
 
+
 /* マイページ */
-.account-content {
+.account__content {
+    margin: 2rem auto;
     display: flex;
     gap: 350px;
 }
-.account-text {
+.account__text {
     font-size: 0.8rem;
+    gap: 1px;
+    display: flex;
+    flex-direction: column;
+
 }
-.right-position {
+.account__action {
     display: block;
     width: fit-content;
     margin-top: -3.5rem;
     margin-left: auto;
 }
-.mypage-content {
+.mypage__content {
     margin-bottom: 4rem;
 }
-.table-design {
+.table{
     width: 100%;
     margin-top: 1.5rem;
     text-align: left;
     border-collapse: collapse;
 }
-.table-design tr ,
-.table-design thead{
+tr, thead{
     border-bottom: 1px solid rgb(50, 50, 69);
     line-height: 2.5rem;
 }
@@ -152,15 +128,13 @@ th,td {
 }
 
 /* 商品新規登録画面 */
-.create-form,
-.edit-form,
-.account-form {
+.form {
     line-height: 1.8rem;
 }
-.form-width {
+.form__input--width{
     width: 100%;
 }
-.btns {
+.btn-qroup {
     margin: 1rem auto;
 }
 /*フッター　ーーーーーーーーーーーーーーーーーーーーーー */
@@ -169,7 +143,7 @@ th,td {
     line-height: 2rem;
     padding: 2rem 0;
 }
-.inquiry-btn {
+.footer__inquiry-btn {
     border: none;
     background-color: rgb(59, 160, 255);
     font-size: 1rem;
@@ -178,7 +152,7 @@ th,td {
     border-radius: 1rem;
     margin: 1rem;
 }
-.footer-link {
+.footer__links {
     display: flex;
     justify-content: center;
     gap: 1rem;

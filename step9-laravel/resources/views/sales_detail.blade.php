@@ -3,7 +3,7 @@
 @section('title', '商品詳細画面')
 
 @section('content')
-<div class="main-content">
+<div class="main__content">
     <h1>商品詳細</h1>
 
     <div class="detail-content">
@@ -14,9 +14,9 @@
         <p>会社: {{ $product->company_id ?? '-' }}</p>
         <!-- お気に入りのハートマーク入れる -->
 
-        <div class="btns">
-            <a href="{{ route('sales', $product->id) }}" class="sales_btn">購入する</a>
-            <a href="{{ route('index') }}" class="back-btn">戻る</a>
+        <div class="btn-qroup">
+            <a href="{{ route('sales', $product->id) }}" class="btn btn--success ">購入する</a>
+            <a href="{{ route('index') }}" class="btn btn--primary">戻る</a>
         </div>
     </div>
 </div>

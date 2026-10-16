@@ -3,7 +3,7 @@
 @section('title', 'アカウント編集画面')
 
 @section('content')
-<div class="main-content">
+<div class="main__content">
     <h1>アカウント情報編集</h1>
 
     @if($errors->any())
@@ -16,7 +16,7 @@
         </div>
     @endif
 
-    <form class="account-form" action="{{ route('users_update', $user->id) }}" method="POST">
+    <form class="form" action="{{ route('users_update', $user->id) }}" method="POST">
         @csrf
         @method('PUT')
         <label for="name">ユーザー名</label><br>
@@ -28,9 +28,9 @@
         <label for="name_kana">カナ</label><br>
         <input type="text" name="name_kana" id="name_kana" value="{{ old('name_kana', $user->name_kana) }}"><br>
 
-        <div class="btns">
-            <a href="{{ route('mypage') }}" class="back-btn">戻る</a>
-            <button type="submit" class="update-btn">更新</button>
+        <div class="btn-qroup">
+            <a href="{{ route('mypage') }}" class="btn btn--primary">戻る</a>
+            <button type="submit" class="btn btn--secondary">更新</button>
         </div>
     </form>
 </div>

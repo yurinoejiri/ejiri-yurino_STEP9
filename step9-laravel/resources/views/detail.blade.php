@@ -3,7 +3,7 @@
 @section('title', '出品商品詳細画面')
 
 @section('content')
-<div class="main-content">
+<div class="main__content">
     <h1>商品詳細</h1>
 
     <div class="detail-content">
@@ -14,15 +14,15 @@
         <p>会社名: {{ $product->company_name }}</p>
     </div>
 
-    <div class="btns">
-        <a href="{{ route('edit', $product->id) }}" class="edit-btn">編集</a>
+    <div class="btn-qroup">
+        <a href="{{ route('edit', $product->id) }}" class="btn btn--edit">編集</a>
 
         <form action="{{ route('destroy', $product->id) }}" method="POST" style="display: inline-block;">
             @csrf
             @method('DELETE')
-            <button type="submit" class="delete-btn" onclick="return confirm('本当に削除しますか？');">削除</button>
+            <button type="submit" class="btn btn--danger" onclick="return confirm('本当に削除しますか？');">削除</button>
         </form>
-        <a href="{{ route('mypage') }}" class="back-btn">戻る</a>
+        <a href="{{ route('mypage') }}" class="btn btn--primary">戻る</a>
     </div>
 </div>
 @endsection

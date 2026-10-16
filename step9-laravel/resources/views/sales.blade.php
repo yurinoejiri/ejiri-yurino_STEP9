@@ -3,7 +3,7 @@
 @section('title', '商品購入画面')
 
 @section('content')
-<div class="main-content">
+<div class="main__content">
     <h1>購入画面</h1>
 
     @if ($errors->any())
@@ -28,9 +28,9 @@
             <p>残り: {{ $product->stock }}</p>
             <p>会社: {{ $product->company_id ?? '-' }}</p>
         
-            <div class="btns">
-                <button type="submit" {{ $product->stock <= 0 ? 'disabled' : '' }} class="sales_btn">購入する</button>
-                <a href="{{ route('salesDetail', $product->id) }}" class="back-btn">戻る</a>
+            <div class="btn-qroup">
+                <button type="submit" {{ $product->stock <= 0 ? 'disabled' : '' }} class="btn btn--success ">購入する</button>
+                <a href="{{ route('salesDetail', $product->id) }}" class="btn btn--primary">戻る</a>
             </div>
         </form>
     </div>
