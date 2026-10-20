@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\LikeController;
 
 Route::get('/', function () {
     return view('index');
@@ -25,6 +26,10 @@ Route::get('/search', [ProductsController::class, 'search'])->name('search');
 
 //　　商品詳細表示 ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 Route::get('/sales_detail/{id}', [ProductsController::class, 'salesDetail'])->name('salesDetail');
+
+//　　いいね機能追加　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+Route::post('/product/{product}/like', [LikeController::class, 'likeProduct'])->middleware('auth');
+Route::delete('/product/{product}/like', [LikeController::class, 'unlikeProduct'])->middleware('auth');
 
 // 商品購入ページ　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 Route::get('/product/{id}/sales', [ProductsController::class, 'sales'])->name('sales');

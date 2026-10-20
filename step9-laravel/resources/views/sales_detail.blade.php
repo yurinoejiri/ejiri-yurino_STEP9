@@ -3,6 +3,9 @@
 @section('title', '商品詳細画面')
 
 @section('content')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 <div class="main__content">
     <h1>商品詳細</h1>
 
@@ -12,7 +15,18 @@
         <p>画像: <img src="{{ asset('storage/' . $product->img_path) }}" alt="{{ $product->product_name }}"></p>
         <p>金額: {{ $product->price }}</p>
         <p>会社: {{ $product->company_id ?? '-' }}</p>
-        <!-- お気に入りのハートマーク入れる -->
+
+        @if (Auth::check())
+        <div class="like-btn">
+            <button id="like-btn"
+                    data-product-id="{{ $product->id }}" 
+                    type="button"
+                    @if ($product->likedBy(Auth::user())) style="color: red;" @endif> 
+                        <i class="fas fa-heart" "></i>
+            </button>
+            <span id="like-count">{{ $product->likes()->count() }}</span>
+        </div>
+        @endif
 
         <div class="btn-qroup">
             <a href="{{ route('sales', $product->id) }}" class="btn btn--success ">購入する</a>

@@ -12,4 +12,9 @@ class Users extends Model
     protected $fillable = [
         'name','name_kanji','name_kana','email','password'
     ];
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
 }

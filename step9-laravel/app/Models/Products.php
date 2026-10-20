@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
 
 class Products extends Model
 {
@@ -25,4 +26,22 @@ class Products extends Model
         return $query->get();
     }
 
+    public function user()
+    {
+        return $this->belongsTo(Users::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class, 'product_id');
+    }
+
+    public function likedBy(?User $user)
+    {
+        if (!$user) {
+            return false;
+        }
+
+        return $this->likes()->where('user_id', $user->id)->exists();
+    }
 }
