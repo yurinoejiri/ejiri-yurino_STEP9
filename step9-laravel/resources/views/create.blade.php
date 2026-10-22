@@ -21,19 +21,19 @@
     <form class="form" action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="product-name">商品名</label><br>
-        <input type="text" class="form-width" name="product_name" id="product_name" value="{{ old('product_name') }}"><br>
+        <input type="text" class="form__input--width" name="product_name" id="product_name" value="{{ old('product_name') }}"><br>
 
         <label for="price">価格</label><br>
-        <input type="number" class="form-width" name="price" id="price" value="{{ old('price') }}"><br>
+        <input type="number" class="form__input--width" name="price" id="price" value="{{ old('price') }}"><br>
 
         <label for="description">商品説明</label><br>
-        <textarea class="form-width" name="description" id="description">{{ old('description') }}</textarea><br>
+        <textarea class="form__input--width" name="description" id="description">{{ old('description') }}</textarea><br>
 
         <label for="stock">在庫数</label><br>
-        <input type="number" class="form-width" name="stock" id="stock" value="{{ old('stock') }}"><br>
+        <input type="number" class="form__input--width" name="stock" id="stock" value="{{ old('stock') }}"><br>
 
         <label for="img-path">商品画像</label><br>
-        <input type="file" class="form-width" name="img_path" id="img_path"><br>
+        <input type="file" class="form__input--width" name="img_path" id="img_path"><br>
 
         <div class="btn-qroup">
             <a href="{{ route('index') }}" class="btn btn--primary">戻る</a>

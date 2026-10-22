@@ -20,13 +20,13 @@
         @csrf
         @method('PUT')
         <label for="product_name">商品名</label><br>
-        <input type="text" class="form-width" name="product_name" id="product_name" value="{{ old('product_name', $product->product_name) }}"><br>
+        <input type="text" class="form__input--width" name="product_name" id="product_name" value="{{ old('product_name', $product->product_name) }}"><br>
         <label for="price">価格</label><br>
-        <input type="numder" class="form-width" name="price" id="price" value="{{ old('price', $product->price) }}"><br>
+        <input type="numder" class="form__input--width" name="price" id="price" value="{{ old('price', $product->price) }}"><br>
         <label for="description">商品説明</label><br>
-        <textarea name="description" class="form-width" id="description">{{ old('description', $product->description) }}</textarea><br>
+        <textarea name="description" class="form__input--width" id="description">{{ old('description', $product->description) }}</textarea><br>
         <label for="stock">在庫数</label><br>
-        <input type="number" class="form-width" name="stock" id="stock" value="{{ old('stock', $product->stock) }}"><br>
+        <input type="number" class="form__input--width" name="stock" id="stock" value="{{ old('stock', $product->stock) }}"><br>
         <label for="img_path" name="img_path" id="img_path">商品画像</label><br>
         <input type="file" name="img_path" id="img_path"><br>
 

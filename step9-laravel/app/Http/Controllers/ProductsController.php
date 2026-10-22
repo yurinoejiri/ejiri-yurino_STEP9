@@ -176,7 +176,6 @@ class ProductsController extends Controller
     {
         $validatedData = $request->validated();
 
-        //後でユーザーログインして開くように修正する。
         $validatedData['user_id'] = auth()->id();
 
         $product = Products::create($validatedData);
