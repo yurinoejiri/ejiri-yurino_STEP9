@@ -91,7 +91,7 @@ class ProductsController extends Controller
                 $product = Products::lockForUpdate()->findOrFail($id);
 
                 if ($product->stock < $quantity) {
-                    throw new \Exception('在庫が足りません。');
+                    throw new \Exception('在庫が足りません!');
                 }
 
                 $product->stock -= $quantity;
@@ -104,11 +104,43 @@ class ProductsController extends Controller
                     'total_price' => $product->price * $quantity,
                 ]);
             });
-        } catch (\Exeption $e) {
+        } catch (\Exception $e) {
             return back()->withErrors(['quantity' => $e->getMessage()]);
         }
 
         return redirect()->route('index')->with('success', '購入が完了しました。');
+    }
+
+    public function apiPurchase(SalesRequest $request)
+    {
+        $validatedData = $request->validated();
+
+        $productId = $request->product_id;
+        $quantity = (int) $request->quantity;
+
+        try {
+            DB::transaction(function () use ($productId, $quantity) {
+                $product = Products::lockForUpdate()->findOrFail($productId);
+
+                if ($product->stock < $quantity) {
+                    throw new \Exception('在庫が足りません！');
+                }
+
+                $product->stock -= $quantity;
+                $product->save();
+
+                Sales::create([
+                    'user_id' => Auth::id(),
+                    'product_id' => $product->id,
+                    'quantity' => $quantity,
+                    'total_price' => $product->price * $quantity,
+                ]);
+            });
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 400);
+        }
+
+        return response()->json(['message' => '購入が完了しました。'], 201);
     }
 
     // 出品商品詳細画面 　ーーーーーーーーーーーーーーーーーーーーーーーーー
