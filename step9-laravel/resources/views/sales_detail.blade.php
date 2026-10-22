@@ -18,7 +18,7 @@
 
         @if (Auth::check())
         <div class="like-btn">
-            <button id="like-btn"
+            <button id="likeBtn"
                     data-product-id="{{ $product->id }}" 
                     type="button"
                     @if ($product->likedBy(Auth::user())) style="color: red;" @endif> 

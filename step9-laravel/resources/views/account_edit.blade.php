@@ -20,13 +20,13 @@
         @csrf
         @method('PUT')
         <label for="name">ユーザー名</label><br>
-        <input type="text" class="form__input--width" name="name" id="name" value="{{ old('name', $user->name) }}"><br>
+        <input type="text" class="form__input--width" name="name" value="{{ old('name', $user->name) }}"><br>
         <label for="email">Eメール</label><br>
-        <input type="email" class="form__input--width" name="email" id="email" value="{{ old('email', $user->email) }}"><br>
+        <input type="email" class="form__input--width" name="email" value="{{ old('email', $user->email) }}"><br>
         <label for="name_kanji">名前</label><br>
-        <input type="text" class="form__input--width" name="name_kanji" id="name_kanji" value="{{ old('name_kanji', $user->name_kanji) }}"><br>
+        <input type="text" class="form__input--width" name="name_kanji" value="{{ old('name_kanji', $user->name_kanji) }}"><br>
         <label for="name_kana">カナ</label><br>
-        <input type="text" class="form__input--width" name="name_kana" id="name_kana" value="{{ old('name_kana', $user->name_kana) }}"><br>
+        <input type="text" class="form__input--width" name="name_kana" value="{{ old('name_kana', $user->name_kana) }}"><br>
 
         <div class="btn-qroup">
             <a href="{{ route('mypage') }}" class="btn btn--primary">戻る</a>

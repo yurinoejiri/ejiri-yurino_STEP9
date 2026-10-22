@@ -15,11 +15,11 @@
                 <a href="{{ route('mypage') }}">マイページ</a>
                 <p>ログインユーザー: {{ auth()->user()->name??'ゲスト' }}</p>
 
-                <form class="header__logout-form" id="header__logout-form" action="{{ route('logout') }}" method="POST">
+                <form class="header__logout-form" id="logoutForm" action="{{ route('logout') }}" method="POST">
                     @csrf
                 </form>
                 <a class="header__logout-btn" href="{{ route('logout') }}" 
-                onclick="event.preventDefault(); document.getElementById('header__logout-form').submit();">
+                onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
                     ログアウト
                 </a>
             </nav>

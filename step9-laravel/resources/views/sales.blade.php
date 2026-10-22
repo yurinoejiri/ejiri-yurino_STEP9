@@ -23,14 +23,16 @@
 
         <form action="{{ route('purchase', $product->id) }}" method="POST">
             @csrf
-            <input type="number" name="quantity" id="quantity" value="1" min="1" max="{{ $product->stock }}">
+            <input type="number" name="quantity" value="1" min="1" max="{{ $product->stock }}">
             <p>金額: {{ $product->price }}</p>
             <p>残り: {{ $product->stock }}</p>
             <p>会社: {{ $product->company_id ?? '-' }}</p>
         
             <div class="btn-qroup">
-                <button type="submit" {{ $product->stock <= 0 ? 'disabled' : '' }} class="btn btn--success ">購入する</button>
-                <a href="{{ route('salesDetail', $product->id) }}" class="btn btn--primary">戻る</a>
+    </div>
+    </div>
+    <button type="submit" {{ $product->stock <= 0 ? 'disabled' : '' }} class="btn btn--success btn-mini">購入する</button>
+                <a href="{{ route('salesDetail', $product->id) }}" class="btn btn--primary btn-big">戻る</a>
             </div>
         </form>
     </div>
