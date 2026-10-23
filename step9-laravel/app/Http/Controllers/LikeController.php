@@ -22,7 +22,7 @@ class LikeController extends Controller
         }
 
         return response()->json([
-            'likes_count' => $product->likes()->count(),
+            'likesCount' => $product->likes()->count(),
         ]);
     }
 
@@ -37,7 +37,7 @@ class LikeController extends Controller
         }
 
         return response()->json([
-            'likes_count' =>$product->likes()->count(),
+            'likesCount' =>$product->likes()->count(),
         ]);
     }
 }

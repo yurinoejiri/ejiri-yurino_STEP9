@@ -27,7 +27,8 @@ class ProductsController extends Controller
     // 検索機能　ーーーーーーーーーーーーーーーーーーーーーーーーーー
     public function search(Request $request)
     {
-        $query = Products::query();
+        $query = Products::query()
+            ->where('user_id', '!=', Auth::id());
 
         if ($request->filled('product_name')) {
             $query->where('product_name', 'like', '%' . $request->product_name . '%');
@@ -193,9 +194,12 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         $product = Products::findOrFail($id);
+
+        $product->likes()->delete();
+        $product->sales()->delete();
         $product->delete();
 
-        return redirect()->route('index')->with('souccess', '商品が削除されました。');
+        return redirect()->route('mypage')->with('success', '商品が削除されました。');
     }
 
     // 新規登録　ーーーーーーーーーーーーーーーーーーーーーーーーーー

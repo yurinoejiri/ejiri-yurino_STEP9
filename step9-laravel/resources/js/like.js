@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('お気に入り！');
             const ProductId = this.getAttribute('data-product-id');
             const url = `/product/${ProductId}/like`;
-            const method = this.querySelector('i').style.color === 'red' ? 'DELETE' : 'POST';
+            const icon = this.querySelector('i');
+            const method = icon.classList.contains('fa-solid') ? 'DELETE' : 'POST';
 
             fetch(url, {
                 method: method,
@@ -17,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
             })
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('like-count').textContent = data.likes_count;
-                    const heartIcon = this.querySelector('i');
-                    heartIcon.style.color = method ==='POST' ? 'red' : 'black';
+                    document.getElementById('likesCount').textContent = data.likesCount;
+                    icon.classList.toggle('fa-solid', method === 'POST');
+                    icon.classList.toggle('fa-regular', method === 'DELETE');
                 });
         });
     }
