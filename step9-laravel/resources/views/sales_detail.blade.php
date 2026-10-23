@@ -21,7 +21,7 @@
             <button id="likeBtn"
                     data-product-id="{{ $product->id }}" 
                     type="button">
-                    <i class="{{ $product->likedBy(Auth::user()) ? 'fa-solid' : 'fa-reqular' }} fa-heart" style="color: rgb(247, 58, 58);"></i>
+                    <i class="{{ $product->likedBy(Auth::user()) ? 'fa-solid' : 'fa-regular' }} fa-heart heart-color"></i>
             </button>
             <span id="likesCount">{{ $product->likes()->count() }}</span>
         </div>

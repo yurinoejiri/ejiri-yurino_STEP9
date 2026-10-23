@@ -99,6 +99,9 @@ img {
     cursor: pointer;
     font-size: 24px;
 }
+.heart-color {
+    color: rgb(247, 58, 58);
+}
 
 /* マイページ */
 .account__content {
