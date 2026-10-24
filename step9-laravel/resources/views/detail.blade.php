@@ -20,7 +20,7 @@
         <form action="{{ route('destroy', $product->id) }}" method="POST" style="display: inline-block;">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn--danger" onclick="return confirm('本当に削除しますか？');">削除</button>
+            <button type="submit" class="btn btn--danger btn--mini" onclick="return confirm('本当に削除しますか？');">削除</button>
         </form>
         <a href="{{ route('mypage') }}" class="btn btn--primary">戻る</a>
     </div>

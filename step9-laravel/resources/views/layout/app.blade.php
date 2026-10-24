@@ -13,7 +13,7 @@
             <nav class=header__nav>
                 <a href="{{ route('index') }}">Home</a>
                 <a href="{{ route('mypage') }}">マイページ</a>
-                <p>ログインユーザー: {{ auth()->user()->name??'ゲスト' }}</p>
+                <p>ログインユーザー : {{ auth()->user()->name??'ゲスト' }}</p>
 
                 <form class="header__logout-form" id="logoutForm" action="{{ route('logout') }}" method="POST">
                     @csrf

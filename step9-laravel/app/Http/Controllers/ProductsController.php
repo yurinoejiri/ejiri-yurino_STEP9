@@ -224,6 +224,6 @@ class ProductsController extends Controller
 
         $product->save();
 
-        return redirect()->route('index')->with('商品が登録されました');
+        return redirect()->route('mypage')->with('商品が登録されました');
     }
 }

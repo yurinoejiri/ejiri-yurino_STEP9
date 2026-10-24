@@ -30,7 +30,7 @@
 
         <div class="btn-qroup">
             <a href="{{ route('mypage') }}" class="btn btn--primary">戻る</a>
-            <button type="submit" class="btn btn--secondary">更新</button>
+            <button type="submit" class="btn btn--secondary btn--mini">更新</button>
         </div>
     </form>
 </div>
