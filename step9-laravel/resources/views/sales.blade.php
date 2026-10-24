@@ -21,20 +21,31 @@
         <p>説明: {{ $product->description }}</p>
         <img src="{{ asset('storage/' . $product->img_path) }}" alt="{{ $product->product_name }}">
 
-        <form action="{{ route('purchase', $product->id) }}" method="POST">
+        <form id="purchaseForm" action="{{ route('purchase', $product->id) }}" method="POST" data-price="{{ $product->price }}">
             @csrf
-            <input type="number" name="quantity" value="1" min="1" max="{{ $product->stock }}">
+            <input type="number" id="quantity" name="quantity" value="1" min="1" max="{{ $product->stock }}">
             <p>金額: {{ $product->price }}</p>
             <p>残り: {{ $product->stock }}</p>
             <p>会社: {{ $product->company_id ?? '-' }}</p>
         
-            <div class="btn-qroup">
-    </div>
-    </div>
-    <button type="submit" {{ $product->stock <= 0 ? 'disabled' : '' }} class="btn btn--success btn-mini">購入する</button>
-                <a href="{{ route('salesDetail', $product->id) }}" class="btn btn--primary btn-big">戻る</a>
+            <div class="btn-group">
+                <button type="button" id="openConfirm" {{ $product->stock <= 0 ? 'disabled' : '' }} class="btn btn--success btn-mini">購入する</button>
+                <a href="{{ route('salesDetail', $product->id) }}" class="btn btn--primary btn--big">戻る</a>
             </div>
         </form>
     </div>
+
+    <!-- 確認用モーダル -->
+    <dialog id="confirmDialog" class="confirm-modal">
+        <p>以下の内容で購入しますか？</p>
+        <p>商品名: {{ $product->product_name }}</p>
+        <p>数量: <span id="confirmQuantity"></span></p>
+        <p>合計金額: <span id="confirmTotal"></span> 円</p>
+
+        <div class="confirm-btn">
+            <button type="button" id="cancelBtn" class="btn btn--primary">キャンセル</button>
+            <button type="button" id="submitBtn" class="btn btn--success">購入する</button>
+        </div>
+    </dialog>
 </div>
 @endsection

@@ -23,12 +23,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-
-                <div class="account-nav">
-                    <a href="{{ route('login') }}" class="account-nav__content">Login</a>
-                    <a href="{{ route('register') }}" class="account-nav__content">Register</a>
-                </div>
-
+                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">

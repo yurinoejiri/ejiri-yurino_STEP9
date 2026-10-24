@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@yield('title', 'ECサイト')</title>
-        @vite(['resources/sass/app.sass','resources/js/app.js','resources/css/style.css'])
+        @vite(['resources/sass/app.sass','resources/js/app.js','resources/js/purchase.js','resources/css/style.css'])
     </head>
     <body>
         <header class="header">

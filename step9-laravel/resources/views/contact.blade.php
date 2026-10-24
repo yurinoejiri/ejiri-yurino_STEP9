@@ -27,7 +27,7 @@
         <label for="content">お問い合わせ内容</label><br>
         <textarea class="form__input--width" name="content"></textarea><br>
 
-        <button type="submit" class="btn btn--secondary">送信</button>
+        <button type="submit" class="btn btn--secondary btn--mini">送信</button>
         <a href="{{ route('index') }}" class="btn btn--primary">戻る</a>
     </form>
 </div>

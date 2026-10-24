@@ -11,12 +11,12 @@
 
     <div class="account__content">
         <div class="account__text">
-            <p>ユーザー名:{{ auth()->user()->name ?? 'ゲスト' }}</p>
-            <p>メール:{{ $users->email ?? '-' }}</p>
+            <p>ユーザー名 : {{ auth()->user()->name ?? 'ゲスト' }}</p>
+            <p>メール : {{ $users->email ?? '-' }}</p>
         </div>
         <div class="account__text">
-            <p>名前:{{ $users->name_kanji ?? '-' }}</p>
-            <p>カナ:{{ $users->name_kana  ?? '-' }}</p>
+            <p>名前 : {{ $users->name_kanji ?? '-' }}</p>
+            <p>カナ : {{ $users->name_kana  ?? '-' }}</p>
         </div>
     </div>
 

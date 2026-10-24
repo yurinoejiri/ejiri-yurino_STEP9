@@ -17,13 +17,6 @@ a {
     color: red;
     font-size: 0.8rem;
 }
-.account__text {
-    display: flex;
-    gap: 1rem;
-}
-.account-nav__content {
-    color: rgb(50, 50, 69);
-}
 th,td {
     vertical-align: middle;
 }
@@ -70,6 +63,9 @@ img {
 .btn--mini {
     padding: 0.3rem;
 }
+.btn--big {
+    padding: 0.8rem;
+}
 .btn--primary {
     background-color: rgb(59, 160, 255);
 }
@@ -84,6 +80,13 @@ img {
 }
 .btn--edit {
     background-color:rgb(82, 205, 160);
+}
+/* 確認ボタン */
+.confirm-btn {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 16px;
 }
 
 /* お気に入りボタン */
