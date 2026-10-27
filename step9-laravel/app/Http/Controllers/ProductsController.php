@@ -57,7 +57,7 @@ class ProductsController extends Controller
 
         $sales = Sales::with('product')
             ->where('user_id', Auth::id())
-            ->latest()
+            ->oldest()
             ->get();
             
 
