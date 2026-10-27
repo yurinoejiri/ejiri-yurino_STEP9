@@ -11,6 +11,7 @@ use App\Http\Requests\UsersRequest;
 use App\Models\Products;
 use App\Models\Users;
 use App\Models\Sales;
+use App\Models\Companies;
 
 class ProductsController extends Controller
 {
@@ -68,16 +69,18 @@ class ProductsController extends Controller
     public function salesDetail($id)
     {
         $product = Products::findOrFail($id);
+        $companies = Companies::findOrFail($id);
 
-        return view('sales_detail', compact('product'));
+        return view('sales_detail', compact('product', 'companies'));
     }
 
     // 購入　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     public function sales($id)
     {
         $product = Products::findOrFail($id);
+        $companies = Companies::findOrFail($id);
 
-        return view('sales', compact('product'));
+        return view('sales', compact('product', 'companies'));
     }
 
     public function purchase(SalesRequest $request, $id)

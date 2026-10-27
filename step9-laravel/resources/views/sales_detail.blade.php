@@ -14,7 +14,7 @@
         <p>説明: {{ $product->description }}</p>
         <p>画像: <img src="{{ asset('storage/' . $product->img_path) }}" alt="{{ $product->product_name }}"></p>
         <p>金額: {{ $product->price }}</p>
-        <p>会社: {{ $product->company_id ?? '-' }}</p>
+        <p>会社: {{ $companies->company_name ?? '-' }}</p>
 
         @if (Auth::check())
         <div class="like-btn">
