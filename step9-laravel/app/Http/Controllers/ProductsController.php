@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProductsRequest;
 use App\Http\Requests\UsersRequest;
-use App\Http\Requests\SalesRequest;
 use App\Models\Products;
 use App\Models\Users;
 use App\Models\Sales;

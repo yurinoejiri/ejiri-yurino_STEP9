@@ -16,7 +16,7 @@
     </div>
     @endif
 
-    <form class="form" action="{{ route('update', $product->id) }}" method="POST" entype="multipart/form-data">
+    <form class="form" action="{{ route('update', $product->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <label for="product_name">商品名</label><br>
@@ -32,7 +32,7 @@
 
         <div class="btn-qroup">
             <a href="{{ route('detail', $product->id) }}" class="btn btn--primary">戻る</a>
-            <button type="submit" class="btn btn--secondary">更新</button>
+            <button type="submit" class="btn btn--secondary btn--mini">更新</button>
         </div>
     </form>
 </div>
