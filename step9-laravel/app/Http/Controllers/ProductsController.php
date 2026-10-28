@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProductsRequest;
 use App\Http\Requests\UsersRequest;
+use App\Http\Requests\SalesRequest;
 use App\Models\Products;
 use App\Models\Users;
 use App\Models\Sales;
@@ -69,18 +70,16 @@ class ProductsController extends Controller
     public function salesDetail($id)
     {
         $product = Products::findOrFail($id);
-        $companies = Companies::findOrFail($id);
 
-        return view('sales_detail', compact('product', 'companies'));
+        return view('sales_detail', compact('product'));
     }
 
     // 購入　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     public function sales($id)
     {
         $product = Products::findOrFail($id);
-        $companies = Companies::findOrFail($id);
 
-        return view('sales', compact('product', 'companies'));
+        return view('sales', compact('product'));
     }
 
     public function purchase(SalesRequest $request, $id)

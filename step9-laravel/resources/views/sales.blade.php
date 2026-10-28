@@ -26,7 +26,7 @@
             <input type="number" id="quantity" name="quantity" value="1" min="1" max="{{ $product->stock }}">
             <p>金額: {{ $product->price }}</p>
             <p>残り: {{ $product->stock }}</p>
-            <p>会社: {{ $companies>company_name ?? '-' }}</p>
+            <p>会社: {{ $product->company->company_name }}</p>
         
             <div class="btn-group">
                 <button type="button" id="openConfirm" {{ $product->stock <= 0 ? 'disabled' : '' }} class="btn btn--success btn-mini">購入する</button>
