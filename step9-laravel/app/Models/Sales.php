@@ -8,7 +8,7 @@ class Sales extends Model
 {
     protected $fillable = ['user_id','product_id','quantity'];
 
-    public function product()
+    public function products()
     {
         return $this->belongsTo(Products::class, 'product_id');
     }

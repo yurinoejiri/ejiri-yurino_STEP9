@@ -10,7 +10,7 @@ class Users extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name','name_kanji','name_kana','email','password'
+        'name','name_kanji','name_kana','email','password','conmany_id'
     ];
 
     public function likes()

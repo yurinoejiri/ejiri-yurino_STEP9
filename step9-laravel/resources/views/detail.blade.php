@@ -11,7 +11,7 @@
         <p>説明: {{ $product->description }}</p>
         <p>画像: <img src="{{ asset('storage/' . $product->img_path) }}" alt="{{ $product->product_name }}"><p>
         <p>金額： ¥{{ $product->price }}</p>
-        <p>会社名: {{ $product->company_name }}</p>
+        <p>会社名: {{ $product->company->company_name}}</p>
     </div>
 
     <div class="btn-qroup">

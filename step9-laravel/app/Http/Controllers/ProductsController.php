@@ -216,6 +216,7 @@ class ProductsController extends Controller
         $validatedData = $request->validated();
 
         $validatedData['user_id'] = auth()->id();
+        $validatedData['company_id'] = auth()->user()->company_id;
 
         $product = Products::create($validatedData);
 

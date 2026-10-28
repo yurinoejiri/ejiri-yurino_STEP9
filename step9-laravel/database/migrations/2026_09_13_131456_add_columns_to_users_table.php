@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('name_kanji');
             $table->string('name_kana')->nullable();
-            $table->foreignId('company_id')->constrained()->ondelete('cascade');
+            $table->foreignId('company_id')->nullable()->constrained()->ondelete('cascade');
         });
     }
 
