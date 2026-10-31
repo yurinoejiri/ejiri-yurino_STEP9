@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProductsRequest;
 use App\Http\Requests\UsersRequest;
@@ -11,6 +12,7 @@ use App\Http\Requests\SalesRequest;
 use App\Models\Products;
 use App\Models\Users;
 use App\Models\Sales;
+use App\Models\Companies;
 
 class ProductsController extends Controller
 {
@@ -42,6 +44,10 @@ class ProductsController extends Controller
 
         $products = $query->get();
 
+        if ($request->ajax()) {
+            return view('product_list', compact('products'))->render();
+        }
+
         return view('index', compact('products'));
     }
 
@@ -57,7 +63,7 @@ class ProductsController extends Controller
 
         $sales = Sales::with('product')
             ->where('user_id', Auth::id())
-            ->latest()
+            ->oldest()
             ->get();
             
 
@@ -213,6 +219,7 @@ class ProductsController extends Controller
         $validatedData = $request->validated();
 
         $validatedData['user_id'] = auth()->id();
+        $validatedData['company_id'] = auth()->user()->company_id;
 
         $product = Products::create($validatedData);
 

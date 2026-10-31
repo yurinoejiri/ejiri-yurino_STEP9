@@ -36,7 +36,7 @@
         <input type="file" class="form__input--width" name="img_path"><br>
 
         <div class="btn-qroup">
-            <a href="{{ route('index') }}" class="btn btn--primary">戻る</a>
+            <a href="{{ route('mypage') }}" class="btn btn--primary">戻る</a>
             <button type="submit" class="btn btn--secondary btn--mini">登録</button>
         </div>
     </form>

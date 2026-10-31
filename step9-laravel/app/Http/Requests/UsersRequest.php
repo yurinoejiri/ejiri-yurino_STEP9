@@ -26,7 +26,7 @@ class UsersRequest extends FormRequest
             'name' => 'required|max:255',
             'email' => 'required|max:255',
             'name_kanji' => 'required|max:255',
-            'name_kana' => 'max:255',
+            'name_kana' => 'required|max:255',
         ];
 
         return $rules;
@@ -41,6 +41,7 @@ class UsersRequest extends FormRequest
             'email.max' => 'メールアドレスは255文字以内で入力してください。',
             'name_kanji.required' => '名前は入力必須です。',
             'name_kanji.max' => '名前は255文字以内で入力してください。',
+            'name_kana.required' => 'カナは入力必須です。',
             'name_kana.max' => 'カナは255文字以内で入力してください。',
         ];
     }

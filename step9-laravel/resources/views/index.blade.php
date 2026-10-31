@@ -7,7 +7,7 @@
 <div class="main__content">
     <h1>商品一覧</h1>
 
-    <form action="{{ route('search') }}" method="GET">
+    <form id="searchForm" action="{{ route('search') }}" method="GET">
         <div class="search-form">
             <input type="text" name="product_name" placeholder="商品名を入力" value="{{ request('product_name') }}">
             <input type="number" name="min_price" placeholder="最低価格" value="{{ request('min_price') }}">
@@ -28,25 +28,9 @@
             </tr>
         </thead>
 
-        @foreach($products as $product)
-        <tbody>
-            <tr>
-                <td>{{ $product->id }}</td>
-                <td>{{ $product->product_name }}</td>
-                <td>{{ $product->description}}</td>
-                <td>
-                    @if($product->img_path)
-                    <img src="{{ asset('storage/' . $product->img_path) }}" alt="{{ $product->product_name }}" width="100">
-                    @else
-                    画像なし
-                    @endif
-                </td>
-                <td>{{ $product->price }}</td>
-
-                <td><a href="{{ route('salesDetail', $product->id) }}" class="btn btn--success btn--small">詳細</a></td>
-            </tr>
+        <tbody id="productList">
+            @include('product_list')
         </tbody>
-        @endforeach
     </table>
 </div>
 @endsection

@@ -5,10 +5,11 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/sass/app.sass',
+                'resources/scss/app.scss',
                 'resources/js/app.js',
                 'resources/css/style.css',
                 'resources/js/purchase.js',
+                'resources/js/product_list.js',
             ],
             refresh: true,
         }),
