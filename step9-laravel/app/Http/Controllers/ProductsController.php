@@ -44,6 +44,10 @@ class ProductsController extends Controller
 
         $products = $query->get();
 
+        if ($request->ajax()) {
+            return view('product_list', compact('products'))->render();
+        }
+
         return view('index', compact('products'));
     }
 
